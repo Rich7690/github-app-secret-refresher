@@ -3,6 +3,7 @@ package controller
 import (
 	"errors"
 	"fmt"
+
 	"github.com/disturbing/github-app-k8s-secret-refresher/v2/internal/config"
 	"github.com/disturbing/github-app-k8s-secret-refresher/v2/internal/types"
 )
@@ -12,7 +13,6 @@ type Controller interface {
 }
 
 func New() (Controller, error) {
-
 	switch config.TokenProcessorType {
 	case types.KUBERNETES:
 		return newKubernetesController()
